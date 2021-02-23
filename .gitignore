@@ -5,3 +5,5 @@ lib/my/*.o
 vgcore.*
 lib/my/build.sh
 .vscode/
+miscs/
+maps/
