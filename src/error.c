@@ -12,9 +12,13 @@ int error(int ac, char **av)
 {
     char *buffer = read_file(av[1], buffer);
 
-    if (buffer == 0)
+    if (buffer == 0) {
+        my_putstr("read error\n");
         return (84);
-    if (verification(av[1]) == -1)
+    }
+    if (verification(buffer) == -1) {
+        my_putstr("verification error\n");
         return (84);
+    }
     return (0);
 }

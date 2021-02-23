@@ -7,6 +7,7 @@
 
 #include "sokoban.h"
 #include "my.h"
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -34,6 +35,14 @@ int how_many_line_in_str(char *str)
         if (str[i] == '\n')
             n++;
     }
+    return (n);
+}
+
+int how_many_line_in_tab(char **tab)
+{
+    int n = 0;
+
+    for (;tab[n] != 0; n++)
     return (n);
 }
 

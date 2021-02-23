@@ -5,12 +5,14 @@
 ## Makefile
 ##
 
-SRC		=	src/my_popup.c			\
-			src/usage.c 			\
-			src/error.c 			\
-			src/utilities.c 		\
+SRC		=	src/error.c				\
+			src/main.c 				\
+			src/my_sokoban.c 		\
+			src/print_game.c 		\
+			src/setup.c				\
+			src/usage.c				\
+			src/utilities.c			\
 			src/verification.c		\
-			src/main.c
 
 OBJ		=	$(SRC: .c=.o)
 

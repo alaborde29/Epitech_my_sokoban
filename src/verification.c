@@ -8,39 +8,28 @@
 #include "my.h"
 #include "sokoban.h"
 
-int verification(char *str)
+int is_char_in_the_str(char *str, char c)
 {
-    if (are_caracthers_allowed(str) == -1)
-        return (-1);
-    if (is_there_multiple_player(str) == -1)
-        return (-1);
-    if (is_same_amount_of_x_and_o(str) == -1)
-        return (-1);
-    return (0);
+    int i = 0;
+
+    while (str[i] != '\0') {
+        if (str[i] == c)
+            return (0);
+        i++;
+    }
+    my_putchar(c);
+    return (-1);
 }
 
 int are_caracthers_allowed(char *str)
 {
-    int i = 0;
+    char *characters = "#OP X\n";
 
-    while (str[i] == '\0') {
-        switch (str[i]) {
-            case '#':
-                i++;
-            case 'O':
-                i++;
-            case 'P':
-                i++;
-            case ' ':
-                i++;
-            case 'X':
-                i++;
-            case '\n':
-                i++;
-            default :
-                return (-1);
-        }
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (is_char_in_the_str(characters, str[i]) != 0)
+            return (-1);
     }
+    return (0);
 }
 
 int is_there_multiple_player(char *str)
@@ -69,5 +58,22 @@ int is_same_amount_of_x_and_o(char *str)
     }
     if (n_o != n_x)
         return (-1);
+    return (0);
+}
+
+int verification(char *str)
+{
+    if (are_caracthers_allowed(str) == -1) {
+        my_putstr("unallowed character\n");
+        return (-1);
+    }
+    if (is_there_multiple_player(str) == -1) {
+        my_putstr("too much of the same character\n");
+        return (-1);
+    }
+    if (is_same_amount_of_x_and_o(str) == -1) {
+        my_putstr("O and X amount doesn't match\n");
+        return (-1);
+    }
     return (0);
 }
