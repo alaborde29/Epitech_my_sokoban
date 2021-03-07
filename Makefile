@@ -22,6 +22,7 @@ SRC		=	src/error.c						\
 			src/push/push_down.c			\
 			src/push/push_left.c			\
 			src/push/push_right.c			\
+			src/analyze.c					\
 
 OBJ		=	$(SRC: .c=.o)
 

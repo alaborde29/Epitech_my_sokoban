@@ -21,10 +21,14 @@ typedef struct vector2x_s
 typedef struct game_info_s
 {
     char **map_tab;
+    char *map_path;
     int game_statut;
     vector2x_t *player_pose;
     WINDOW *win;
     int is_p_pos_o;
+    vector2x_t **all_box_pos;
+    vector2x_t **all_storage_pos;
+    int num_of_box;
 }game_info_t;
 
 void usage(void);
@@ -47,5 +51,7 @@ void push_up(game_info_t *game_info);
 void push_down(game_info_t *game_info);
 void push_left(game_info_t *game_info);
 void push_right(game_info_t *game_info);
+int is_game_won(game_info_t *game_info);
+void reset_game(game_info_t *game_info);
 
 #endif /* !SOKOBAN_H_ */

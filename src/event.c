@@ -22,6 +22,8 @@ int handle_event(game_info_t *game_info)
         move_char_left(game_info);
     if (catch == KEY_RIGHT)
         move_char_right(game_info);
+    if (catch == 'r')
+        reset_game(game_info);
     if (catch == 410)
         clear();
     find_player_pos(game_info);
