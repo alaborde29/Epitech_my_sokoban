@@ -46,7 +46,7 @@ void go_to_o_u(game_info_t *game_info)
 void move_a_block_u(game_info_t *game_info)
 {
     if (game_info->map_tab[game_info->player_pose->y + 1]\
-    [game_info->player_pose->x] == 'O') {
+    [game_info->player_pose->x] == 'X') {
         push_up(game_info);
     }
     return ;
