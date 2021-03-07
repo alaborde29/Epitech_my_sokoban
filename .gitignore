@@ -7,3 +7,4 @@ lib/my/build.sh
 .vscode/
 miscs/
 maps/
+vgcore.*
