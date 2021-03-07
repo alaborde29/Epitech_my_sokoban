@@ -17,7 +17,7 @@ void get_all_box_pos(game_info_t *game_info)
 {
     int n = 0;
 
-    for (int i = 0; game_info->map_tab[i]; i++) {
+    for (int i = 0; game_info->map_tab[i] != 0; i++) {
         for (int j = 0; game_info->map_tab[i][j]; j++) {
             if (game_info->map_tab[i][j] == 'X') {
                 game_info->all_box_pos[n]->x = j;
@@ -37,7 +37,7 @@ void get_all_storage_pos(game_info_t *game_info)
 {
     int n = 0;
 
-    for (int i = 0; game_info->map_tab[i]; i++) {
+    for (int i = 0; game_info->map_tab[i] != 0; i++) {
         for (int j = 0; game_info->map_tab[i][j]; j++) {
             if (game_info->map_tab[i][j] == 'O') {
                 game_info->all_storage_pos[n]->x = j;
@@ -54,8 +54,17 @@ int is_game_won(game_info_t *game_info)
     get_all_storage_pos(game_info);
     for (int i = 0; i != game_info->num_of_box; i++) {
         if (game_info->all_box_pos[i]->x != game_info->all_storage_pos[i]->x \
-        && game_info->all_box_pos[i]->y != game_info->all_storage_pos[i]->y)
-            return (-1);
+        || game_info->all_box_pos[i]->y != game_info->all_storage_pos[i]->y){
+            return (-1);}
+        // my_put_nbr(game_info->all_box_pos[i]->y);
+        // my_putchar('\n');
+        // my_put_nbr(game_info->all_box_pos[i]->x);
+        // my_putchar('\n');
+        // my_put_nbr(game_info->all_storage_pos[i]->y);
+        // my_putchar('\n');
+        // my_put_nbr(game_info->all_storage_pos[i]->x);
+        // my_putchar('\n');
     }
-    return (0);
+    my_putstr("win");
+    return (1);
 }

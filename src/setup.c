@@ -68,6 +68,8 @@ game_info_t *setup(char *map_path)
     game_info->player_pose = malloc(sizeof(vector2x_t));
     find_player_pos(game_info);
     game_info->is_p_pos_o = 0;
+    count_box_num(game_info);
+    setup_pos_tab(game_info);
 
     return (game_info);
 }

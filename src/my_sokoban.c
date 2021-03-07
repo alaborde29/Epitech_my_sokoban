@@ -23,10 +23,6 @@ void my_sokoban(char *map_path)
         handle_event(game_info);
         if (game_info->game_statut == 1)
             break;
-        /*if (is_game_won(game_info) == 0) {
-            my_putstr("you won !");
-            break;
-        }*/
     }
     endwin();
     return;

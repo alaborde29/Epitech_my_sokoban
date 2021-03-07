@@ -53,5 +53,6 @@ void push_left(game_info_t *game_info);
 void push_right(game_info_t *game_info);
 int is_game_won(game_info_t *game_info);
 void reset_game(game_info_t *game_info);
+void setup_pos_tab(game_info_t *game_info);
 
 #endif /* !SOKOBAN_H_ */
