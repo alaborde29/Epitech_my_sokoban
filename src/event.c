@@ -25,6 +25,5 @@ int handle_event(game_info_t *game_info)
     if (catch == 410)
         clear();
     find_player_pos(game_info);
-    my_putstr("end of event\n");
     return (0);
 }

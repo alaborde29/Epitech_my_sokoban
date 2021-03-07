@@ -85,8 +85,6 @@ void find_player_pos(game_info_t *game_info)
             y++;
         }
     }
-    my_put_nbr(y);
-    my_put_nbr(x);
     game_info->player_pose->x = x;
     game_info->player_pose->y = y;
 }
