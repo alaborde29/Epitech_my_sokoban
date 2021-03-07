@@ -12,19 +12,18 @@
 
 void my_sokoban(char *map_path)
 {
-    char **map_tab = setup(map_path);
-    WINDOW *win;
+    game_info_t *game_info = setup(map_path);
 
-    my_show_word_array(map_tab);
+    my_show_word_array(game_info->map_tab);
     initscr();
+    noecho();
     while (1) {
-        print_game(map_tab);
+        print_game(game_info->map_tab);
         refresh();
-        if (getch() == ' ')
+        handle_event(game_info);
+        if (game_info->game_statut == 1)
             break;
     }
     endwin();
-    free (win);
     return;
-
 }

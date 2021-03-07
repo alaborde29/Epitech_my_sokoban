@@ -60,11 +60,33 @@ char **split_lines(char *str, int tab_size)
             malloc_size++;
         }
         tab[i] = malloc(sizeof(char) * o);
-        for (; str[n] != '\n' && str[n] != '\0'; j++, n++){
-            tab[i][j] = str[n];}
+        for (; str[n] != '\n' && str[n] != '\0'; j++, n++)
+            tab[i][j] = str[n];
         tab[i][j] = '\0';
         j = 0;
     }
     tab[tab_size] = 0;
     return (tab);
+}
+
+void find_player_pos(game_info_t *game_info)
+{
+    int y = 0;
+    int x = 0;
+
+    while (game_info->map_tab[y] != 0) {
+        while (game_info->map_tab[y][x] != 'P' && \
+        game_info->map_tab[y][x] != '\0')
+            x++;
+        if (game_info->map_tab[y][x] == 'P')
+            break ;
+        else {
+            x = 0;
+            y++;
+        }
+    }
+    my_put_nbr(y);
+    my_put_nbr(x);
+    game_info->player_pose->x = x;
+    game_info->player_pose->y = y;
 }

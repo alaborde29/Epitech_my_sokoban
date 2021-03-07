@@ -14,8 +14,7 @@ void print_game(char **map)
     int i = 0;
 
     while (map[i]) {
-        mvprintw((LINES / 2) - (how_many_line_in_tab(map) / 2) \
-        - i + 2, (COLS / 2) - my_strlen(map[i]), map[i]);
+        mvprintw((LINES / 2) - (how_many_line_in_tab(map) / 2) - i, (COLS / 2) - my_strlen(map[i]), map[i]);
         i++;
     }
 }

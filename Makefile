@@ -5,14 +5,23 @@
 ## Makefile
 ##
 
-SRC		=	src/error.c				\
-			src/main.c 				\
-			src/my_sokoban.c 		\
-			src/print_game.c 		\
-			src/setup.c				\
-			src/usage.c				\
-			src/utilities.c			\
-			src/verification.c		\
+SRC		=	src/error.c						\
+			src/event.c						\
+			src/main.c 						\
+			src/my_sokoban.c 				\
+			src/print_game.c 				\
+			src/setup.c						\
+			src/usage.c						\
+			src/utilities.c					\
+			src/verification.c				\
+			src/move/move_char_up.c			\
+			src/move/move_char_down.c		\
+			src/move/move_char_left.c		\
+			src/move/move_char_right.c		\
+			src/push/push_up.c				\
+			src/push/push_down.c			\
+			src/push/push_left.c			\
+			src/push/push_right.c			\
 
 OBJ		=	$(SRC: .c=.o)
 
