@@ -14,7 +14,6 @@ void my_sokoban(char *map_path)
 {
     game_info_t *game_info = setup(map_path);
 
-    my_show_word_array(game_info->map_tab);
     initscr();
     noecho();
     keypad(stdscr, TRUE);
