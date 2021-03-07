@@ -15,7 +15,7 @@ int handle_event(game_info_t *game_info)
     if (catch == ' ')
         game_info->game_statut = 1;
     if (catch == KEY_UP)
-        my_putstr("bruh moment\n");
+        move_char_up(game_info);
     if (catch == KEY_DOWN)
         move_char_down(game_info);
     if (catch == KEY_LEFT)
@@ -24,5 +24,7 @@ int handle_event(game_info_t *game_info)
         move_char_right(game_info);
     if (catch == 410)
         clear();
+    find_player_pos(game_info);
+    my_putstr("end of event\n");
     return (0);
 }

@@ -10,5 +10,5 @@
 
 void push_up(game_info_t *game_info)
 {
-    
+    return ;
 }

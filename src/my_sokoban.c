@@ -17,6 +17,7 @@ void my_sokoban(char *map_path)
     my_show_word_array(game_info->map_tab);
     initscr();
     noecho();
+    keypad(stdscr, TRUE);
     while (1) {
         print_game(game_info->map_tab);
         refresh();
