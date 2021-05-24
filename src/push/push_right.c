@@ -20,7 +20,7 @@ void move_player_r(game_info_t *game_info)
         [game_info->player_pose->x] = ' ';
     }
     game_info->map_tab[game_info->player_pose->y]\
-    [game_info->player_pose->x - 1] = 'P';
+    [game_info->player_pose->x + 1] = 'P';
 }
 
 void blanck_space_pr(game_info_t *game_info)

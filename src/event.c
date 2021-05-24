@@ -15,9 +15,9 @@ int handle_event(game_info_t *game_info)
     if (catch == ' ')
         game_info->game_statut = 1;
     if (catch == KEY_UP)
-        move_char_up(game_info);
-    if (catch == KEY_DOWN)
         move_char_down(game_info);
+    if (catch == KEY_DOWN)
+        move_char_up(game_info);
     if (catch == KEY_LEFT)
         move_char_left(game_info);
     if (catch == KEY_RIGHT)

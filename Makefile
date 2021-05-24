@@ -10,7 +10,8 @@ SRC		=	src/error.c						\
 			src/main.c 						\
 			src/my_sokoban.c 				\
 			src/print_game.c 				\
-			src/setup.c						\
+			src/setup/setup.c				\
+			src/setup/setup_utilities.c		\
 			src/usage.c						\
 			src/utilities.c					\
 			src/verification.c				\
@@ -23,6 +24,7 @@ SRC		=	src/error.c						\
 			src/push/push_left.c			\
 			src/push/push_right.c			\
 			src/analyze.c					\
+			src/setup/free.c				\
 
 OBJ		=	$(SRC: .c=.o)
 

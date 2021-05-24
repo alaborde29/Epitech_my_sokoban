@@ -17,7 +17,6 @@ int is_char_in_the_str(char *str, char c)
             return (0);
         i++;
     }
-    my_putchar(c);
     return (-1);
 }
 

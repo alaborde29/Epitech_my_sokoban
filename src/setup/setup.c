@@ -62,6 +62,7 @@ game_info_t *setup(char *map_path)
     char *map_str = read_file(map_path, map_str);
 
     game_info->map_path = map_path;
+    game_info->map_str = map_str;
     game_info->map_tab = split_lines\
     (map_str, how_many_line_in_str(map_str) + 1);
     game_info->game_statut = 0;
@@ -70,6 +71,9 @@ game_info_t *setup(char *map_path)
     game_info->is_p_pos_o = 0;
     count_box_num(game_info);
     setup_pos_tab(game_info);
-
+    game_info->crate_pos = get_symbol_pos('X', map_str, game_info->map_tab);
+    game_info->crate_n = count_char_occ('X', map_str);
+    game_info->goal_pos = get_symbol_pos('O', map_str, game_info->map_tab);
+    game_info->crate_n = count_char_occ('O', map_str);
     return (game_info);
 }

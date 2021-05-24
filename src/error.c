@@ -10,15 +10,19 @@
 
 int error(int ac, char **av)
 {
-    char *buffer = read_file(av[1], buffer);
+    char *buffer = 0;
+    buffer = read_file(av[1], buffer);
 
     if (buffer == 0) {
         my_putstr("read error\n");
+        free(buffer);
         return (84);
     }
     if (verification(buffer) == -1) {
         my_putstr("verification error\n");
+        free(buffer);
         return (84);
     }
+    free(buffer);
     return (0);
 }
