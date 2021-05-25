@@ -62,5 +62,6 @@ void setup_pos_tab(game_info_t *game_info);
 vector2x_t *get_symbol_pos(char c, char *map_str, char **map_tab);
 int count_char_occ(char c, char *str);
 void free_struct(game_info_t *game_info);
+int are_vector_the_same(vector2x_t v1, vector2x_t v2);
 
 #endif /* !SOKOBAN_H_ */

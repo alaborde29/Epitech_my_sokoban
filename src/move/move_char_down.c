@@ -54,7 +54,19 @@ void move_a_block_d(game_info_t *game_info)
 
 void move_char_down(game_info_t *game_info)
 {
+    int put_o = 0;
+    int i = 0;
+
+    while (i != game_info->crate_n) {
+        if (are_vector_the_same(game_info->player_pose[0], \
+        game_info->goal_pos[i]) == 0)
+            put_o = 1;
+        i++;
+    }
     blanck_space_d(game_info);
     go_to_o_d(game_info);
     move_a_block_d(game_info);
+    if (put_o == 1)
+        game_info->map_tab[game_info->player_pose->y]\
+        [game_info->player_pose->x] = 'O';
 }
