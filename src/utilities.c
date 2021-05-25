@@ -42,7 +42,13 @@ int how_many_line_in_tab(char **tab)
 {
     int n = 0;
 
+<<<<<<< HEAD
     for (;tab[n] != 0; n++)
+=======
+    while (tab[n] != 0) {
+        n++;
+    }
+>>>>>>> b0ebca2... fixed text allign
     return (n);
 }
 
