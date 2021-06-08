@@ -7,13 +7,13 @@
 
 #include "my.h"
 
-void usage()
+void usage(void)
 {
     my_putstr("USAGE\n");
     my_putstr("\t./my_sokoban map\n");
     my_putstr("DESCRIPTION\n");
     my_putstr("\tmap file representating the warehouse map, ");
-    my_putstr("containint '#' for walls,\n\t'P' for the ");
+    my_putstr("containint '#' for walls, \n\t'P' for the ");
     my_putstr("player, 'X' for boxes and 'O' for storage locations.\n");
     my_putstr("COMMANDS\n");
     my_putstr("\t'R' is for reset\n");

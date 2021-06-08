@@ -56,14 +56,6 @@ int is_game_won(game_info_t *game_info)
         if (game_info->all_box_pos[i]->x != game_info->all_storage_pos[i]->x \
         || game_info->all_box_pos[i]->y != game_info->all_storage_pos[i]->y){
             return (-1);}
-        // my_put_nbr(game_info->all_box_pos[i]->y);
-        // my_putchar('\n');
-        // my_put_nbr(game_info->all_box_pos[i]->x);
-        // my_putchar('\n');
-        // my_put_nbr(game_info->all_storage_pos[i]->y);
-        // my_putchar('\n');
-        // my_put_nbr(game_info->all_storage_pos[i]->x);
-        // my_putchar('\n');
     }
     my_putstr("win");
     return (1);
